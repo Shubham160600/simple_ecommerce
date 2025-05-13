@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Products</h2>
+<ul>
+    {% for product in products %}
+    <li>
+        <a href="{{ url_for('product', product_id=product[0]) }}">
+            {{ product[1] }} - ${{ product[2] }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
